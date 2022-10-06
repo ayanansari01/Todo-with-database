@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="body">
+    <div id="box">
+        <div id="header">
+            <h1>Todo</h1>
+        </div>
+        <div id="input">
+    <form onsubmit="postTodo(); return false">
+        Input: <input id="todo" type="text" required>
+        <button id="addbtn" type="submit">Add</button>
+    </form>
+    <div id="refresh">
+    <button id="refreshbtn" onclick="getAllTodos()">Refresh</button>
+    </div>
+        </div>
+    <h4 id="result"> </h4>
+    </div>
+    </div>
+
+    <script>
+        function postTodo() {
+            let todoText = document.querySelector("#todo").value
+
+            axios.post(`http://localhost:3000/todo`, {
+                text: todoText
+            })
+                .then(function (response) {
+                    console.log(response.data);
+
+                    document.querySelector("#result").innerHTML = response.data.message
+
+                    // response.data.data.map(eachTodo => {
+                    //     document.querySelector("#result").innerHTML += eachTodo
+                    //     document.querySelector("#result").innerHTML += '<br>'
+                    // })
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+
+        }
+
+        function getAllTodos() {
+            axios.get(`http://localhost:3000/todos`)
+                .then(function (response) {
+                    console.log(response.data);
+
+                    document.querySelector("#result").innerHTML = ""
+
+                    response.data.data.map(eachTodo => {
+                        document.querySelector("#result").innerHTML += eachTodo.text
+                        document.querySelector("#result").innerHTML += '<br>'
+                    })
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+
+        setInterval(getAllTodos, 1000);
+
+    </script>
+
+
+</body>
+
+</html>

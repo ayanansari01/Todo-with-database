@@ -1,0 +1,29 @@
+{
+  "name": "todo-with-database",
+  "version": "1.0.0",
+  "description": "todo including database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.mjs",
+    "dev": "nodemon server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayanansari01/Todo-with-database.git"
+  },
+  "author": "Ayan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayanansari01/Todo-with-database/issues"
+  },
+  "homepage": "https://github.com/ayanansari01/Todo-with-database#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

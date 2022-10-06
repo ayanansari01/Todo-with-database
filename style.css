@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+#body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f0ec0c;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+#input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 25px 30px;
+}
+
+#refresh{
+    padding: 5px;
+}
+
+#todo{
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+}
+
+#addbtn{
+    width: 75px;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+}
+
+#refreshbtn{
+    width: 75px;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+}
+
+#box{
+    border-radius: 7px;
+    width: 500px;
+    background: #ded776;
+}
+
+#result{
+    margin: 20px 25px 30px;
+    background: aliceblue;
+    border-radius: 7px;
+    padding: 4px;
+}
+/* 
+#input-box{
+    border: none;
+    outline: none;
+} */
