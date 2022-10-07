@@ -18,12 +18,15 @@
             <h1>Todo</h1>
         </div>
         <div id="input">
-    <form onsubmit="postTodo(); return false">
-        Input: <input id="todo" type="text" required>
+    <form id="form" onsubmit="postTodo(); return false">
+        <input id="todo" type="text" required>
         <button id="addbtn" type="submit">Add</button>
     </form>
     <div id="refresh">
     <button id="refreshbtn" onclick="getAllTodos()">Refresh</button>
+    </div>
+    <div>
+        <button id="deletebtn" type="submit">Delete</button>
     </div>
         </div>
     <h4 id="result"> </h4>

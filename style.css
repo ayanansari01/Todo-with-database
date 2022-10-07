@@ -34,7 +34,9 @@
 
 #todo{
     width: 200px;
-    height: 30px;
+    height: 25px;
+    margin-top: 1px;
+    margin-left: 10px;
     outline: none;
     border: none;
     border-radius: 7px;
@@ -46,6 +48,8 @@
     outline: none;
     border: none;
     border-radius: 7px;
+    margin-top: 1px;
+    margin-left: 10px;
 }
 
 #refreshbtn{
@@ -58,8 +62,9 @@
 
 #box{
     border-radius: 7px;
-    width: 500px;
+    width: 550px;
     background: #ded776;
+
 }
 
 #result{
@@ -68,8 +73,16 @@
     border-radius: 7px;
     padding: 4px;
 }
-/* 
-#input-box{
-    border: none;
+
+#deletebtn{
+    width: 75px;
+    height: 25px;
     outline: none;
-} */
+    border: none;
+    border-radius: 7px;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+}
