@@ -52,6 +52,20 @@ app.get('/todos', (req, res) => {
     });
 })
 
+app.delete('/todos', (req, res) => {
+
+    mongoose.connection.db.dropCollection('todos', function (err, result) {
+        if (!err) {
+            res.send({
+                message: "all todo deleted",
+            })
+        }else{
+            res.status(500).send({
+                message: "server error"
+            })
+        }
+    });
+})
 app.listen(port, () => {
     console.log(`Server app is listening on port ${port}`)
 })

@@ -26,7 +26,7 @@
     <button id="refreshbtn" onclick="getAllTodos()">Refresh</button>
     </div>
     <div>
-        <button id="deletebtn" type="submit">Delete</button>
+        <button id="deletebtn" onclick="dltAllTodos()">Delete</button>
     </div>
         </div>
     <h4 id="result"> </h4>
@@ -68,7 +68,7 @@
                         document.querySelector("#result").innerHTML += eachTodo.text
                         document.querySelector("#result").innerHTML += '<br>'
                     })
-
+                    // <button>Delete</button>
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -76,6 +76,25 @@
         }
 
         setInterval(getAllTodos, 1000);
+
+    function dltAllTodos() {
+        axios.delete(`http://localhost:3000/todos`)
+            .then(() => {
+                console.log("All deleted from mongodb");
+                history.go(0)
+        })
+        .catch((err) => console.log("error", err))
+    }
+
+//     async function dltTodo(id) {
+//     await axios.delete(`https://localhost:3000/todo/${id}`, {
+//         _id: id
+//     })
+//         .then((res) => {
+//             console.log("deleted from mongodb");
+//         })
+//         .catch((err) => console.log("err", err))
+// }
 
     </script>
 
