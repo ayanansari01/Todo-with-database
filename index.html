@@ -29,7 +29,10 @@
         <button id="deletebtn" onclick="dltAllTodos()">Delete</button>
     </div>
         </div>
+        <div>
     <h4 id="result"> </h4>
+    <button>Delete</button>
+        </div>
     </div>
     </div>
 
@@ -37,7 +40,7 @@
         function postTodo() {
             let todoText = document.querySelector("#todo").value
 
-            axios.post(`http://localhost:3000/todo`, {
+            axios.post(`https://tame-crown-crab.cyclic.app/`, {
                 text: todoText
             })
                 .then(function (response) {
@@ -58,7 +61,7 @@
         }
 
         function getAllTodos() {
-            axios.get(`http://localhost:3000/todos`)
+            axios.get(`https://tame-crown-crab.cyclic.app/`)
                 .then(function (response) {
                     console.log(response.data);
 
@@ -78,7 +81,7 @@
         setInterval(getAllTodos, 1000);
 
     function dltAllTodos() {
-        axios.delete(`http://localhost:3000/todos`)
+        axios.delete(`https://tame-crown-crab.cyclic.app/`)
             .then(() => {
                 console.log("All deleted from mongodb");
                 history.go(0)
@@ -87,7 +90,7 @@
     }
 
 //     async function dltTodo(id) {
-//     await axios.delete(`https://localhost:3000/todo/${id}`, {
+//     await axios.delete(`https://tame-crown-crab.cyclic.app//todo/${id}`, {
 //         _id: id
 //     })
 //         .then((res) => {
