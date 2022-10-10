@@ -27,7 +27,7 @@ app.post('/todo', (req, res) => {
             console.log(saved);
 
             res.send({
-                message: "your todo is saved"
+                message: ""
             })
         } else {
             res.status(500).send({
