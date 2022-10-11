@@ -12,28 +12,29 @@
 </head>
 
 <body>
-    <div id="body">
-    <div id="box">
-        <div id="header">
-            <h1>Todo</h1>
-        </div>
+    <div id="bdy">
+        <div id="box">
+            <div id="header">
+                <h1>Todo</h1>
+            </div>
         <div id="input">
-    <form id="form" onsubmit="postTodo(); return false">
-        <input id="todo" type="text" required>
-        <button id="addbtn" type="submit">Add</button>
-    </form>
+        <form id="form" onsubmit="postTodo(); return false">
+            <input id="todo" type="text" required>
+            <button id="addbtn" type="submit">Add</button>
+        </form>
     <div id="refresh">
-    <button id="refreshbtn" onclick="getAllTodos()">Refresh</button>
+        <button id="refreshbtn" onclick="getAllTodos()">Refresh</button>
     </div>
     <div>
-        <button id="deletebtn" onclick="dltAllTodos()">Delete</button>
+        <button id="deletebtn1" onclick="dltAllTodos()">Delete</button>
     </div>
         </div>
-        <div>
-    <h4 id="result"> </h4>
-    <!-- <button>Delete</button> -->
+
+            <div id="result-box">
+                <h4 id="result"> </h4>
+                <!-- <button id="deletebtn2">Delete</button> -->
+            </div>
         </div>
-    </div>
     </div>
 
     <script>
@@ -68,10 +69,11 @@
                     document.querySelector("#result").innerHTML = ""
 
                     response.data.data.map(eachTodo => {
+
                         document.querySelector("#result").innerHTML += eachTodo.text
                         document.querySelector("#result").innerHTML += '<br>'
+                        // `<button>Delete</button>`
                     })
-                    // <button>Delete</button>
                 })
                 .catch(function (error) {
                     console.log(error);

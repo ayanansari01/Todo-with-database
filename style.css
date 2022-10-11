@@ -7,6 +7,13 @@
 }
 
 #body{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background: #f0ec0c;
+}
+
+#bdy{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,7 +82,15 @@
     padding: 4px;
 }
 
-#deletebtn{
+#deletebtn1{
+    width: 75px;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+}
+
+#deletebtn2{
     width: 75px;
     height: 25px;
     outline: none;
@@ -86,4 +101,13 @@
 #form{
     display: flex;
     justify-content: center;
+}
+#result-box{
+    margin: 20px 25px 30px;
+    background: aliceblue;
+    border-radius: 7px;
+    /* padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
 }
